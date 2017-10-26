@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">眼睛管家</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">邮箱</string>
+    <string name="prompt_phone">手机号</string>
+    <string name="prompt_password">密码</string>
+    <string name="prompt_confirm_password">密码确认</string>
+    <string name="action_sign_in">登&#160;&#160;&#160;&#160;录</string>
+    <string name="action_register">注&#160;&#160;&#160;&#160;册</string>
+    <string name="action_sign_in_short">登&#160;&#160;&#160;&#160;录</string>
+    <string name="error_invalid_email">不是有效邮箱</string>
+    <string name="error_invalid_phone">手机号码无效</string>
+    <string name="error_invalid_password">密码太短</string>
+    <string name="error_incorrect_password">密码不正确</string>
+    <string name="error_field_required">必填</string>
+    <string name="error_password_not_same">两次密码不一样</string>
+    <string name="permission_rationale">"需要联系人权限"</string>
+    <string name="register">注册</string>
+
+    <string name="camera_permission_confirmation">确保应用正常运行，需要手机摄像头权限</string>
+    <string name="camera_permission_not_granted">没有摄像头权限，应用不能正常工作。</string>
+
+    <string name="cancel_label">取消</string>
+    <string name="confirm_label">确认</string>
+    <string name="title_activity_settings">设置</string>
+
+    <string name="pref_warning_type_name">选择报警类型</string>
+
+    <string name="pref_detect_eyes_warning_name">检测到瞳孔时报警</string>
+    <string name="pref_detect_min_distance_name">最小距离（厘米）</string>
+    <string name="pref_detect_max_distance_name">最大距离（厘米）</string>
+
+    <string name="detect_min_distance_default_value">50</string>
+    <string name="detect_max_distance_default_value">60</string>
+
+    <string name="pref_detect_no_eyes_warning_name">未检测到瞳孔时报警</string>
+    <string name="pref_duration_name">检测时间（秒）</string>
+    <string name="duration_default_value">5</string>
+
+    <string name="pref_warning_ringtone_name">警报铃声</string>
+    <string name="pref_use_system_ringtone">使用系统铃声</string>
+    <string name="pref_system_ringtone">铃声</string>
+
+    <string name="pref_header_alarm_title">瞳孔检测警报</string>
+    <string name="pref_header_alarm_summary">设置瞳孔检测时的警报类型</string>
+    <string name="pref_header_parallel_line_title">平行线检测</string>
+    <string name="pref_header_camera_switch_title">前后镜头设置</string>
+
+    <string name="pref_show_both_camera_name">同时打开前后摄像头</string>
+    <string name="pref_show_both_camera_summary">此功能需要系统软硬件的支持，不保证在所有的手机上都能成功。</string>
+    <string name="pref_switch_camera_name">前后镜头自动切换</string>
+    <string name="pref_switch_camera_frequency_name">切换频率（秒）</string>
+
+    <string name="pref_calibration_line_name">标定直线</string>
+    <string name="pref_clear_calibration_line_name">清除直线</string>
+    <string name="pref_line_color_name">直线颜色</string>
+    <string name="pref_line_stroke_width_name">直线粗细</string>
+
+    <string name="picker_color">选择颜色</string>
+
+    <string name="key_min_distance">min_distance</string>
+    <string name="key_max_distance">max_distance</string>
+    <string name="key_detect_duration">detect_duration</string>
+    <string name="key_warning_type">warning_type</string>
+    <string name="key_warning_type2">warning_type2</string>
+    <string name="key_no_detect_duration">no_detect_duration</string>
+    <string name="key_warning_type_detect">type_detect</string>
+    <string name="key_warning_type_no_detect">type_no_detect</string>
+    <string name="key_show_both_camera">show_both_camera</string>
+    <string name="key_auto_switch_camera">auto_switch_camera</string>
+    <string name="key_auto_switch_frequency">switch_camera_frequency</string>
+    <string name="key_calibration_line">calibration_line</string>
+    <string name="key_clear_calibration_line">clear_calibration_line</string>
+    <string name="key_line_color">line_color</string>
+    <string name="key_line_width">line_width</string>
+    <string name="key_use_system_ringtone">use_system_ringtone</string>
+    <string name="key_ringtone">ringtone</string>
+
+    <string name="detect_distance_label">检测距离：%.1f</string>
+
+
+    <string-array name="waring_type_entries">
+        <item>检测到瞳孔时报警</item>
+        <item>未检测到瞳孔时报警</item>
+    </string-array>
+
+    <string-array name="waring_type_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="waring_type_default_values">
+        <item>0</item>
+    </string-array>
+</resources>

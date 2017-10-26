@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+    <header
+        android:fragment="com.vejoe.imgproc.SettingsActivity$ParamsPreferenceFragment"
+        android:title="@string/pref_header_alarm_title"
+        android:icon="@drawable/ic_alarm"
+        />
+    <header
+        android:fragment="com.vejoe.imgproc.SettingsActivity$MaskLinePreferenceFragment"
+        android:title="@string/pref_header_parallel_line_title"
+        android:icon="@drawable/ic_parallel_line"
+        />
+    <header
+        android:fragment="com.vejoe.imgproc.SettingsActivity$SwitchCameraPreferenceFragment"
+        android:title="@string/pref_header_camera_switch_title"
+        android:icon="@drawable/ic_camera_switch_setting"
+        />
+</preference-headers>

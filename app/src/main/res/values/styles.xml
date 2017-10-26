@@ -1,0 +1,57 @@
+<resources
+    >
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColorPrimary">@color/prefs_text_color</item>
+        <item name="android:textColorSecondary">#919191</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="textColorAlertDialogListItem">@color/prefs_text_color</item>
+        <item name="android:textColorAlertDialogListItem">@color/prefs_text_color</item>
+    </style>
+
+    <style name="AppTheme.Register">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#2d3d54</item>
+        <item name="colorPrimaryDark">#2d3d54</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Settings">
+        <item name="colorPrimary">#2d3d54</item>
+        <item name="colorPrimaryDark">#2d3d54</item>
+        <item name="colorAccent">#009688</item>
+        <item name="android:textColorPrimary">@color/prefs_text_color</item>
+        <item name="android:textColorSecondary">#919191</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="textColorAlertDialogListItem">@color/prefs_text_color</item>
+        <item name="android:textColorAlertDialogListItem">@color/prefs_text_color</item>
+    </style>
+    <style name="AlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle</item>
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+    </style>
+    <style name="DialogWindowTitle" parent="Base.DialogWindowTitle.AppCompat">
+        <item name="android:textAppearance">@style/TextAppearanceWindowTitle</item>
+    </style>
+
+    <style name="TextAppearanceWindowTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/abc_text_size_title_material</item>
+        <!--<item name="android:textColor">@color/colorAccent</item>-->
+    </style>
+</resources>

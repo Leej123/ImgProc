@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <MultiSelectListPreference
+        android:title="@string/pref_warning_type_name"
+        android:key="@string/key_warning_type2"
+        android:entries="@array/waring_type_entries"
+        android:entryValues="@array/waring_type_values"
+        android:defaultValue="@array/waring_type_default_values"
+        />
+
+    <PreferenceCategory
+        android:selectable="true"
+        android:title="@string/pref_detect_eyes_warning_name"
+        android:key="@string/key_warning_type_detect"
+        >
+        <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+        <EditTextPreference
+            android:capitalize="words"
+            android:defaultValue="@string/detect_min_distance_default_value"
+            android:inputType="numberSigned"
+            android:key="@string/key_min_distance"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_detect_min_distance_name" />
+
+        <EditTextPreference
+            android:capitalize="words"
+            android:defaultValue="@string/detect_max_distance_default_value"
+            android:inputType="numberSigned"
+            android:key="@string/key_max_distance"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_detect_max_distance_name" />
+
+        <EditTextPreference
+            android:capitalize="words"
+            android:defaultValue="@string/duration_default_value"
+            android:inputType="numberSigned"
+            android:key="@string/key_detect_duration"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_duration_name" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:selectable="true"
+        android:title="@string/pref_detect_no_eyes_warning_name"
+        android:key="@string/key_warning_type_no_detect"
+        >
+        <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+        <EditTextPreference
+            android:capitalize="words"
+            android:defaultValue="@string/duration_default_value"
+            android:inputType="numberSigned"
+            android:key="@string/key_no_detect_duration"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_duration_name" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:selectable="true"
+        android:title="@string/pref_warning_ringtone_name"
+        >
+        <SwitchPreference
+            android:title="@string/pref_use_system_ringtone"
+            android:key="@string/key_use_system_ringtone"
+            android:defaultValue="false"
+            />
+        <!--<ListPreference-->
+            <!--android:title="@string/pref_system_ringtone"-->
+            <!--android:key="@string/key_ringtone"-->
+            <!--android:enabled="false"-->
+            <!--/>-->
+    </PreferenceCategory>
+</PreferenceScreen>

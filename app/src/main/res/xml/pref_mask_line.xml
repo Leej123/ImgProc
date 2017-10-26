@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference android:title="@string/pref_calibration_line_name"
+        android:key="@string/key_calibration_line"
+        />
+    <com.flask.colorpicker.ColorPickerPreference
+        android:title="@string/pref_line_color_name"
+        android:key="@string/key_line_color"
+        app:alphaSlider="true"
+        app:lightnessSlider="true"
+        app:pickerTitle="@string/picker_color"
+        app:pickerButtonOk="@string/confirm_label"
+        app:pickerButtonCancel="@string/cancel_label"
+        />
+    <EditTextPreference
+        android:title="@string/pref_line_stroke_width_name"
+        android:key="@string/key_line_width"
+        android:defaultValue="8"
+        android:capitalize="words"
+        android:inputType="numberSigned"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        />
+    <Preference android:title="@string/pref_clear_calibration_line_name"
+        android:key="@string/key_clear_calibration_line"
+        />
+</PreferenceScreen>

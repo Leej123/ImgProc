@@ -1,0 +1,159 @@
+apply plugin: 'com.android.model.application'
+
+model {
+    android {
+        compileSdkVersion = 25
+        buildToolsVersion = "25.0.3"
+
+        defaultConfig.with {
+            applicationId = "com.vejoe.imgproc"
+            minSdkVersion.apiLevel = 14
+            targetSdkVersion.apiLevel = 25
+            versionCode = 2
+            versionName = "1.2"
+            testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+            //vectorDrawables.useSupportLibrary = true
+        }
+    }
+
+    android.ndk {
+        moduleName = "opencv"
+        cppFlags.add("-std=c++11")
+        cppFlags.add("-frtti")
+        cppFlags.add("-fexceptions")
+        cppFlags.add("-I${file("../native/jni/include")}".toString())
+        cppFlags.add("-I${file("../native/jni/include/opencv")}".toString())
+        ldLibs.addAll(["android", "EGL", "GLESv2", "dl", "log", "z"]) //编译需要
+        stl = 'gnustl_shared'
+
+        abiFilters.add("armeabi-v7a")
+        abiFilters.add("armeabi")
+    }
+
+    android.buildTypes {
+        release {
+            minifyEnabled = false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles.add(file('proguard-rules.pro'))
+        }
+    }
+
+    android.productFlavors {
+        create("arm") {
+            ndk.with {
+                abiFilters.add("armeabi")
+                String libsDir = getProjectDir().getParent() + "\\native\\libs\\armeabi\\"
+                String thirdPartyDir = getProjectDir().getParent() + "\\native\\3rdparty\\libs\\armeabi\\"
+
+                ldFlags.add(libsDir + "libopencv_java3.so")
+                ldFlags.add(libsDir + "libopencv_features2d.a")
+                ldFlags.add(libsDir + "libopencv_flann.a")
+                ldFlags.add(libsDir + "libopencv_imgproc.a")
+                ldFlags.add(libsDir + "libopencv_core.a")
+                ldFlags.add(libsDir + "libopencv_highgui.a")
+                ldFlags.add(libsDir + "libopencv_calib3d.a")//注意添加的先后顺序
+                ldFlags.add(libsDir + "libopencv_objdetect.a")
+                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
+                ldFlags.add(libsDir + "libopencv_ml.a")
+                ldFlags.add(libsDir + "libopencv_photo.a")
+                ldFlags.add(libsDir + "libopencv_shape.a")
+                ldFlags.add(libsDir + "libopencv_stitching.a")
+                ldFlags.add(libsDir + "libopencv_superres.a")
+                ldFlags.add(libsDir + "libopencv_video.a")
+                ldFlags.add(libsDir + "libopencv_videoio.a")
+                ldFlags.add(libsDir + "libopencv_videostab.a")
+                ldFlags.add(thirdPartyDir + "libtbb.a")
+                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+                ldFlags.add(thirdPartyDir + "liblibpng.a")
+                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+                ldFlags.add(thirdPartyDir + "libtegra_hal.a")
+            }
+        }
+        create("armv7") {
+            ndk.with {
+                abiFilters.add("armeabi-v7a")
+                String libsDir = getProjectDir().getParent() + "\\native\\libs\\armeabi-v7a\\";
+                String thirdPartyDir = getProjectDir().getParent() + "\\native\\3rdparty\\libs\\armeabi-v7a\\";
+
+                ldFlags.add(libsDir + "libopencv_java3.so")
+                ldFlags.add(libsDir + "libopencv_features2d.a")
+                ldFlags.add(libsDir + "libopencv_flann.a")
+                ldFlags.add(libsDir + "libopencv_imgproc.a")
+                ldFlags.add(libsDir + "libopencv_core.a")
+                ldFlags.add(libsDir + "libopencv_highgui.a")
+                ldFlags.add(libsDir + "libopencv_calib3d.a")
+                ldFlags.add(libsDir + "libopencv_objdetect.a")
+                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
+                ldFlags.add(libsDir + "libopencv_ml.a")
+                ldFlags.add(libsDir + "libopencv_photo.a")
+                ldFlags.add(libsDir + "libopencv_shape.a")
+                ldFlags.add(libsDir + "libopencv_stitching.a")
+                ldFlags.add(libsDir + "libopencv_superres.a")
+                ldFlags.add(libsDir + "libopencv_video.a")
+                ldFlags.add(libsDir + "libopencv_videoio.a")
+                ldFlags.add(libsDir + "libopencv_videostab.a")
+                ldFlags.add(thirdPartyDir + "libtbb.a")
+                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+                ldFlags.add(thirdPartyDir + "liblibpng.a")
+                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+                ldFlags.add(thirdPartyDir + "libtegra_hal.a")
+            }
+        }
+        create("x86") {
+            ndk.with {
+                abiFilters.add("x86")
+                String libsDir = getProjectDir().getParent() + "\\native\\libs\\x86\\";
+                String thirdPartyDir = getProjectDir().getParent() + "\\native\\3rdparty\\libs\\x86\\";
+
+                ldFlags.add(libsDir + "libopencv_java3.so")
+                ldFlags.add(libsDir + "libopencv_features2d.a")
+                ldFlags.add(libsDir + "libopencv_flann.a")
+                ldFlags.add(libsDir + "libopencv_imgproc.a")
+                ldFlags.add(libsDir + "libopencv_core.a")
+                ldFlags.add(libsDir + "libopencv_highgui.a")
+                ldFlags.add(libsDir + "libopencv_calib3d.a")
+                ldFlags.add(libsDir + "libopencv_objdetect.a")
+                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
+                ldFlags.add(libsDir + "libopencv_ml.a")
+                ldFlags.add(libsDir + "libopencv_photo.a")
+                ldFlags.add(libsDir + "libopencv_shape.a")
+                ldFlags.add(libsDir + "libopencv_stitching.a")
+                ldFlags.add(libsDir + "libopencv_superres.a")
+                ldFlags.add(libsDir + "libopencv_video.a")
+                ldFlags.add(libsDir + "libopencv_videoio.a")
+                ldFlags.add(libsDir + "libopencv_videostab.a")
+                ldFlags.add(thirdPartyDir + "libtbb.a")
+                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+                ldFlags.add(thirdPartyDir + "liblibpng.a")
+                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+                ldFlags.add(thirdPartyDir + "libtegra_hal.a")
+            }
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':cameralib')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:support-vector-drawable:25.3.1'
+    compile 'com.github.QuadFlask:colorpicker:0.0.13'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    testCompile 'junit:junit:4.12'
+}

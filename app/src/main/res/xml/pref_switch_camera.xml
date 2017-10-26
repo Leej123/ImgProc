@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:title="@string/pref_show_both_camera_name"
+        android:key="@string/key_show_both_camera"
+        android:summary="@string/pref_show_both_camera_summary"
+        android:defaultValue="false"
+        />
+    <SwitchPreference
+        android:title="@string/pref_switch_camera_name"
+        android:key="@string/key_auto_switch_camera"
+        android:defaultValue="true"
+        />
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/duration_default_value"
+        android:inputType="numberSigned"
+        android:key="@string/key_auto_switch_frequency"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_switch_camera_frequency_name" />
+</PreferenceScreen>
